@@ -7,7 +7,8 @@ public class UnsafeCounter {
 	public UnsafeCounter(int base){
 		this.cont = base;
 	}
-	
+
+	//si puo anche mettere public syncronized void inc() per includere la sincronizzazione direttamente nel metodo
 	public void inc(){
 		synchronized (this){
 			cont++;
