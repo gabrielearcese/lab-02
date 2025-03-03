@@ -13,7 +13,7 @@ public class BoundedCounter {
 	public void inc() throws OverflowException {
 		synchronized (this){
 			if (cont + 1 > max){
-				throw new OverflowException();
+				throw new OverflowException(); //lancia eccezione se il contatore aumenta troppo
 			}
 			cont++;
 		}
@@ -22,7 +22,7 @@ public class BoundedCounter {
 	public  void dec() throws UnderflowException {
 		synchronized (this){
 			if (cont - 1 < min){
-				throw new UnderflowException();
+				throw new UnderflowException(); //lancia eccezione se il contatore decresce troppo
 			}
 			cont--;
 		}
