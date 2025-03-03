@@ -4,10 +4,16 @@ public class TestCheckAndAct {
 
 	public static void main(String[] args) throws Exception {
 
+		/*
+		Bounded counter è thread safe ma visto che worker A e B mi causano check and act
+		allora se eseguo il main mi da eccezione
+
+		il motivo per cui ci sono 4 thread, 2 di tipo solo per generare più in fretta l'eccezione
+		 */
 		int ntimes = 1000000; 
 		
 		BoundedCounter c = new BoundedCounter(0,1);
-		
+
 		WorkerA w1a = new WorkerA(c,ntimes);
 		WorkerA w1b = new WorkerA(c,ntimes);
 		WorkerB w2a = new WorkerB(c,ntimes);
