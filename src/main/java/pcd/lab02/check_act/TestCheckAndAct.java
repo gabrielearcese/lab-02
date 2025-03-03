@@ -10,7 +10,7 @@ public class TestCheckAndAct {
 
 		il motivo per cui ci sono 4 thread, 2 di tipo solo per generare più in fretta l'eccezione
 		 */
-		int ntimes = 1000000; 
+		int ntimes = 1000000;
 		
 		BoundedCounter c = new BoundedCounter(0,1);
 
