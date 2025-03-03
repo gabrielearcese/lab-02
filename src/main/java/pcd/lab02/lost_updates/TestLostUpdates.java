@@ -4,15 +4,16 @@ public class TestLostUpdates {
 
 	public static void main(String[] args) throws Exception {
 		
-		int ntimes = 100; // try with different values: 100, 200, 1000, 5000, ...
+		int ntimes = 150000; // try with different values: 100, 200, 1000, 5000, ...
+		var lock = new Object();
 		
 		if (args.length > 0) {
 			ntimes = Integer.parseInt(args[0]);
 		}
 		
 		UnsafeCounter c = new UnsafeCounter(0);
-		Worker w1 = new Worker("Worker-A", c, ntimes);
-		Worker w2 = new Worker("Worker-B", c, ntimes);
+		Worker w1 = new Worker("Worker-A", c, ntimes, lock);
+		Worker w2 = new Worker("Worker-B", c, ntimes, lock);
 
 		Cron cron = new Cron();
 		cron.start();
