@@ -15,6 +15,8 @@ public class UnsafeCounter {
 	}
 	
 	public int getValue(){
-		return cont;
+		synchronized (this){
+			return cont;
+		}
 	}
 }
