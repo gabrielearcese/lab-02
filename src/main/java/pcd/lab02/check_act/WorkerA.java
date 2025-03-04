@@ -16,7 +16,7 @@ public class WorkerA extends Thread{
 				synchronized (counter){
 					if (counter.getValue() > 0){
 						counter.dec();
-				}
+					}
 				}
 			}
 		} catch (Exception ex){

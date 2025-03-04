@@ -16,7 +16,7 @@ public class WorkerB extends Thread {
 				synchronized (counter){
 					if (counter.getValue() < 1){
 						counter.inc();
-				}
+					}
 				}
 			}
 		} catch (Exception ex){
